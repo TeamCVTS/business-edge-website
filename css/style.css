@@ -186,7 +186,8 @@ header {
   text-align: center;
 }
 
-/* ==================== HERO SECTION ==================== */
+/* ==================== SECTION BACKGROUND PATTERN ==================== */
+/* Hero - Dark Blue (kept as is) */
 .hero {
   background: linear-gradient(135deg, var(--slate) 0%, #0F1A24 100%);
   color: white;
@@ -196,6 +197,96 @@ header {
   overflow: hidden;
 }
 
+/* Section 1 - White (Pricing) */
+#pricing {
+  background: var(--white);
+  padding: 80px 0;
+}
+
+/* Section 2 - Hero Blue (How It Works) */
+#how-it-works {
+  background: linear-gradient(135deg, var(--slate) 0%, #0F1A24 100%);
+  padding: 80px 0;
+  color: white;
+}
+
+#how-it-works .section-title {
+  color: white;
+}
+
+#how-it-works .section-sub {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#how-it-works .step {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#how-it-works .step h3 {
+  color: white;
+}
+
+#how-it-works .step p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#how-it-works .step-number {
+  background: var(--blue);
+  color: white;
+}
+
+/* Section 3 - White (Why Us) */
+#why-us {
+  background: var(--white);
+  padding: 80px 0;
+}
+
+/* Section 4 - Hero Blue (FAQ) */
+#faq {
+  background: linear-gradient(135deg, var(--slate) 0%, #0F1A24 100%);
+  padding: 80px 0;
+  color: white;
+}
+
+#faq .section-title {
+  color: white;
+}
+
+#faq .section-sub {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#faq .faq-item {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#faq .faq-question {
+  color: white;
+}
+
+#faq .faq-question:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+#faq .faq-answer {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#faq .faq-question i {
+  color: var(--blue-light);
+}
+
+/* Section 5 - White (Contact) */
+#contact {
+  background: var(--white);
+  padding: 80px 0;
+}
+
+/* ==================== HERO SECTION ==================== */
 .hero::before {
   content: '';
   position: absolute;
@@ -307,6 +398,8 @@ header {
   transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
   border: 1px solid var(--border-light);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .pricing-card:hover {
@@ -398,9 +491,16 @@ header {
   margin-bottom: 20px;
 }
 
+.vat-note {
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
 .feature-list {
   list-style: none;
   margin: 24px 0;
+  flex: 1;
 }
 
 .feature-list li {
@@ -431,6 +531,7 @@ header {
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 12px;
+  align-self: flex-end;
 }
 
 /* ==================== BUNDLES SECTION ==================== */
@@ -522,10 +623,6 @@ header {
 }
 
 /* ==================== HOW IT WORKS ==================== */
-#how-it-works {
-  background: var(--white);
-}
-
 .steps-grid {
   display: flex;
   flex-wrap: wrap;
@@ -538,20 +635,22 @@ header {
   flex: 1;
   min-width: 250px;
   text-align: center;
-  background: var(--gray-bg);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   padding: 40px 24px;
   border-radius: 24px;
   transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .step:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .step-number {
-  background: var(--slate);
-  color: var(--blue);
+  background: var(--blue);
+  color: white;
   width: 60px;
   height: 60px;
   font-size: 1.8rem;
@@ -566,11 +665,11 @@ header {
 .step h3 {
   font-size: 1.4rem;
   margin-bottom: 12px;
-  color: var(--slate);
+  color: white;
 }
 
 .step p {
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* ==================== WHY US ==================== */
@@ -619,11 +718,12 @@ header {
 }
 
 .faq-item {
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   border-radius: 16px;
   margin-bottom: 16px;
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .faq-question {
@@ -633,17 +733,17 @@ header {
   align-items: center;
   cursor: pointer;
   font-weight: 600;
-  color: var(--slate);
+  color: white;
   transition: var(--transition);
 }
 
 .faq-question:hover {
-  background: var(--gray-light);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .faq-question i {
   transition: transform 0.3s ease;
-  color: var(--blue);
+  color: var(--blue-light);
 }
 
 .faq-item.active .faq-question i {
@@ -655,7 +755,7 @@ header {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, padding 0.3s ease;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .faq-item.active .faq-answer {
@@ -726,6 +826,59 @@ header {
   margin-bottom: 20px;
 }
 
+/* ==================== CHECKBOX MULTI-SELECT ==================== */
+.checkbox-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--slate);
+  font-size: 0.95rem;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--gray-bg);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 2px solid transparent;
+  font-size: 0.9rem;
+}
+
+.checkbox-item:hover {
+  background: var(--blue-bg-light);
+  border-color: var(--blue-light);
+}
+
+.checkbox-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--blue);
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.checkbox-item input[type="checkbox"]:checked + span {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.checkbox-item:has(input:checked) {
+  background: var(--blue-bg-light);
+  border-color: var(--blue);
+}
+
 input, select, textarea {
   width: 100%;
   padding: 14px 18px;
@@ -779,7 +932,7 @@ footer {
   background: var(--slate);
   color: white;
   padding: 48px 0 24px;
-  margin-top: 60px;
+  margin-top: 0;
 }
 
 .footer-content {
@@ -934,6 +1087,10 @@ footer {
   .info-card {
     flex: 1;
   }
+
+  .checkbox-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 768px) {
@@ -997,6 +1154,18 @@ footer {
     justify-content: center;
     text-align: center;
   }
+
+  #pricing,
+  #how-it-works,
+  #why-us,
+  #faq,
+  #contact {
+    padding: 60px 0;
+  }
+
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1025,5 +1194,17 @@ footer {
   .tab-btn {
     padding: 8px 16px;
     font-size: 0.85rem;
+  }
+
+  #pricing,
+  #how-it-works,
+  #why-us,
+  #faq,
+  #contact {
+    padding: 40px 0;
+  }
+
+  .checkbox-grid {
+    grid-template-columns: 1fr;
   }
 }

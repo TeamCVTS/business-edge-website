@@ -106,47 +106,33 @@ faqItems.forEach(item => {
 const quoteForm = document.getElementById('quoteForm');
 if (quoteForm) {
   quoteForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
+    // Form will submit to Formspree (action attribute is set)
+    // We just show a success message after submission
     const fullName = document.getElementById('fullName')?.value || '';
     const email = document.getElementById('email')?.value || '';
-    const phone = document.getElementById('phone')?.value || '';
-    const businessName = document.getElementById('businessName')?.value || '';
-    const serviceInterest = document.getElementById('serviceInterest')?.value || '';
-    const message = document.getElementById('message')?.value || '';
-    const selectedService = document.getElementById('selectedService')?.value || '';
     
     if (!fullName || !email) {
+      e.preventDefault();
       showFormMessage('Please fill in your name and email address.', 'error');
       return;
     }
     
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
+      e.preventDefault();
       showFormMessage('Please enter a valid email address.', 'error');
       return;
     }
     
-    const quoteRequest = {
-      fullName,
-      email,
-      phone,
-      businessName,
-      serviceInterest,
-      selectedService: selectedService || 'Not specified',
-      message,
-      timestamp: new Date().toISOString()
-    };
-    
-    console.log('Quote Request Submitted:', quoteRequest);
-    
-    showFormMessage(
-      'Thank you! We\'ve received your request and will respond within 24 hours.',
-      'success'
-    );
-    
-    quoteForm.reset();
-    if (hiddenServiceInput) hiddenServiceInput.value = '';
+    // Show success message (will appear after form submission)
+    setTimeout(() => {
+      showFormMessage(
+        'Thank you! We\'ve received your request and will respond within 24 hours.',
+        'success'
+      );
+      quoteForm.reset();
+      if (hiddenServiceInput) hiddenServiceInput.value = '';
+    }, 500);
   });
 }
 
