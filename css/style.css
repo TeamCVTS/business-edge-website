@@ -1208,3 +1208,13 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+.info-card a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.info-card a:hover {
+  color: #0066FF; 
+}
