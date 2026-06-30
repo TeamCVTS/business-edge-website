@@ -1209,12 +1209,15 @@ footer {
   }
 }
 
-.info-card a {
-  color: inherit;
+/* ==================== CONTACT INFO LINKS ==================== */
+.contact-info .info-card a {
+  color: var(--text-muted);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: var(--transition);
+  font-weight: 500;
 }
 
-.info-card a:hover {
-  color: #0066FF; 
+.contact-info .info-card a:hover {
+  color: var(--blue);
+  text-decoration: underline;
 }
