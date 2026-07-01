@@ -11,34 +11,34 @@ const createScrollProgressBar = () => {
   });
 };
 
-// ==================== STICKY CTA BAR ====================
-const createStickyCTA = () => {
-  if (document.querySelector('.sticky-cta')) return;
+// // ==================== STICKY CTA BAR ====================
+// const createStickyCTA = () => {
+//   if (document.querySelector('.sticky-cta')) return;
   
-  const ctaBar = document.createElement('div');
-  ctaBar.className = 'sticky-cta';
-  ctaBar.innerHTML = `
-    <div class="container">
-      <p>🚀 <strong>Ready to grow your business?</strong> Get a custom quote today.</p>
-      <a href="#contact" class="btn-blue">Request Quote →</a>
-    </div>
-  `;
-  document.body.appendChild(ctaBar);
+//   const ctaBar = document.createElement('div');
+//   ctaBar.className = 'sticky-cta';
+//   ctaBar.innerHTML = `
+//     <div class="container">
+//       // <p>🚀 <strong>Ready to grow your business?</strong> Get a custom quote today.</p>
+//       // <a href="#contact" class="btn-blue">Request Quote →</a>
+//     </div>
+//   `;
+//   document.body.appendChild(ctaBar);
   
-  window.addEventListener('scroll', () => {
-    const pricingSection = document.getElementById('pricing');
-    if (pricingSection) {
-      const pricingBottom = pricingSection.offsetTop + pricingSection.offsetHeight;
-      const scrollPosition = window.scrollY + window.innerHeight;
+//   window.addEventListener('scroll', () => {
+//     const pricingSection = document.getElementById('pricing');
+//     if (pricingSection) {
+//       const pricingBottom = pricingSection.offsetTop + pricingSection.offsetHeight;
+//       const scrollPosition = window.scrollY + window.innerHeight;
       
-      if (scrollPosition > pricingBottom + 100) {
-        ctaBar.classList.add('visible');
-      } else {
-        ctaBar.classList.remove('visible');
-      }
-    }
-  });
-};
+//       if (scrollPosition > pricingBottom + 100) {
+//         ctaBar.classList.add('visible');
+//       } else {
+//         ctaBar.classList.remove('visible');
+//       }
+//     }
+//   });
+// };
 
 // ==================== BACK TO TOP BUTTON ====================
 const createBackToTop = () => {
