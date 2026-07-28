@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Business Edge provides domains, websites, email hosting, WhatsApp chatbots, VoIP, and Microsoft business packages for SMEs in South Africa.">
   <title>Business Edge | Digital Foundation for SMEs</title>
-  <!-- Google Fonts & Font Awesome (already in head) -->
+  <!-- Google Fonts & Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    /* ===== CSS RESET & VARIABLES (embedded for single-file) ===== */
+    /* ===== CSS RESET & VARIABLES ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
       --slate: #1A2C3E; --slate-light: #243447; --blue: #0066FF;
@@ -26,33 +26,42 @@
     .section-sub { text-align: center; color: var(--text-muted); max-width: 700px; margin: 0 auto 48px; font-size: 1.1rem; }
     .blue-accent-text { color: var(--blue); }
 
-    /* header */
-    header { background: var(--slate); position: sticky; top:0; z-index:1000; padding:16px 0; box-shadow: var(--shadow-sm); }
-    .header-flex { display:flex; justify-content:space-between; align-items:center; gap:40px; }
-    .logo h1 { font-size:1.6rem; font-weight:800; color:white; letter-spacing:-0.5px; }
-    .logo h1 span { color:var(--blue); }
-    .tagline { font-size:0.7rem; opacity:0.75; color:white; }
+    /* ===== HEADER WITH LOGO ===== */
+    header { background: var(--slate); position: sticky; top:0; z-index:1000; padding:12px 0; box-shadow: var(--shadow-sm); }
+    .header-flex { display:flex; justify-content:space-between; align-items:center; gap:20px; }
+    .logo { display:flex; align-items:center; gap:14px; }
+    .logo img { 
+      height: 48px; 
+      width: auto; 
+      border-radius: 8px;
+      display: block;
+      object-fit: contain;
+    }
+    .logo-text { display:flex; flex-direction:column; }
+    .logo-text h1 { font-size:1.6rem; font-weight:800; color:white; letter-spacing:-0.5px; line-height:1.2; }
+    .logo-text h1 span { color:var(--blue); }
+    .logo-text .tagline { font-size:0.65rem; opacity:0.75; color:white; letter-spacing:0.3px; margin-top:1px; }
     .nav-links { display:flex; gap:32px; list-style:none; }
     .nav-links a { color:white; text-decoration:none; font-weight:600; font-size:0.95rem; transition:var(--transition); position:relative; }
     .nav-links a::after { content:''; position:absolute; bottom:-5px; left:50%; width:0; height:2px; background:var(--blue); transition:all 0.3s ease; transform:translateX(-50%); }
     .nav-links a:hover::after { width:80%; }
     .mobile-menu-btn { display:none; font-size:1.8rem; color:white; cursor:pointer; }
 
-    /* buttons */
+    /* ===== BUTTONS ===== */
     .btn-blue { background:var(--blue); color:white; padding:14px 32px; border-radius:40px; font-weight:700; text-decoration:none; display:inline-block; transition:var(--transition); border:none; cursor:pointer; font-size:1rem; }
     .btn-blue:hover { background:var(--blue-dark); transform:translateY(-2px); box-shadow:0 4px 12px rgba(0,102,255,0.3); }
     .btn-outline { background:transparent; border:2px solid var(--blue); color:var(--blue); padding:12px 28px; border-radius:40px; font-weight:600; text-decoration:none; transition:var(--transition); display:inline-block; }
     .btn-outline:hover { background:var(--blue); color:white; transform:translateY(-2px); }
     .btn-full { width:100%; text-align:center; }
 
-    /* hero */
+    /* ===== HERO ===== */
     .hero { background:linear-gradient(135deg, var(--slate) 0%, #0F1A24 100%); color:white; padding:100px 0; text-align:center; position:relative; overflow:hidden; }
     .hero-badge { display:inline-block; background:rgba(0,102,255,0.15); color:var(--blue); padding:6px 16px; border-radius:40px; font-size:0.8rem; font-weight:600; margin-bottom:24px; }
     .hero h2 { font-size:3rem; margin-bottom:20px; font-weight:800; }
     .hero p { font-size:1.2rem; max-width:700px; margin:0 auto 32px; opacity:0.9; }
     .hero-buttons { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
 
-    /* sections backgrounds */
+    /* ===== SECTIONS ===== */
     #pricing, #why-us, #contact { background:var(--white); padding:80px 0; }
     #how-it-works { background:linear-gradient(135deg, var(--slate) 0%, #0F1A24 100%); padding:80px 0; color:white; }
     #how-it-works .section-title { color:white; }
@@ -66,7 +75,7 @@
     #faq .faq-question { color:white; }
     #faq .faq-answer { color:rgba(255,255,255,0.8); }
 
-    /* pricing tabs */
+    /* ===== PRICING TABS ===== */
     .pricing-tabs { display:flex; justify-content:center; gap:16px; margin-bottom:48px; flex-wrap:wrap; }
     .tab-btn { background:transparent; border:2px solid var(--border-light); padding:12px 28px; border-radius:50px; font-size:1rem; font-weight:600; cursor:pointer; transition:var(--transition); color:var(--text-muted); font-family:'Montserrat', sans-serif; }
     .tab-btn:hover { border-color:var(--blue); color:var(--blue); }
@@ -75,7 +84,7 @@
     .tab-content.active { display:block; }
     @keyframes fadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
 
-    /* pricing cards */
+    /* ===== PRICING CARDS ===== */
     .pricing-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:32px; margin-top:20px; }
     .pricing-card { background:var(--white); border-radius:20px; padding:28px; box-shadow:var(--shadow-sm); transition:all 0.4s cubic-bezier(0.2,0.9,0.4,1.1); border:1px solid var(--border-light); position:relative; display:flex; flex-direction:column; }
     .pricing-card:hover { transform:translateY(-8px) scale(1.01); box-shadow:var(--shadow-lg); border-color:var(--blue); }
@@ -93,19 +102,19 @@
     .quote-btn { background:var(--slate); color:white; border:none; width:100%; padding:14px; border-radius:40px; font-weight:600; font-size:0.95rem; cursor:pointer; transition:all 0.3s ease; margin-top:12px; align-self:flex-end; }
     .quote-btn:hover { background:var(--blue); transform:scale(1.02); }
 
-    /* steps */
+    /* ===== STEPS ===== */
     .steps-grid { display:flex; flex-wrap:wrap; gap:40px; justify-content:center; margin-top:40px; }
     .step { flex:1; min-width:250px; text-align:center; padding:40px 24px; border-radius:24px; transition:var(--transition); }
     .step-number { width:60px; height:60px; font-size:1.8rem; font-weight:800; border-radius:60px; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; }
 
-    /* why us */
+    /* ===== WHY US ===== */
     .features-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:32px; margin-top:40px; }
     .feature { text-align:center; padding:32px 24px; background:var(--white); border-radius:20px; box-shadow:var(--shadow-sm); transition:var(--transition); }
     .feature i { font-size:2.5rem; color:var(--blue); margin-bottom:20px; }
     .feature h3 { font-size:1.3rem; margin-bottom:12px; color:var(--slate); }
     .feature p { color:var(--text-muted); }
 
-    /* FAQ */
+    /* ===== FAQ ===== */
     .faq-grid { max-width:800px; margin:0 auto; }
     .faq-item { border-radius:16px; margin-bottom:16px; overflow:hidden; }
     .faq-question { padding:20px 24px; display:flex; justify-content:space-between; align-items:center; cursor:pointer; font-weight:600; transition:var(--transition); }
@@ -114,7 +123,7 @@
     .faq-answer { padding:0 24px; max-height:0; overflow:hidden; transition:max-height 0.3s ease, padding 0.3s ease; }
     .faq-item.active .faq-answer { padding:0 24px 20px 24px; max-height:200px; }
 
-    /* contact */
+    /* ===== CONTACT ===== */
     .contact-wrapper { display:grid; grid-template-columns:1fr 2fr; gap:48px; margin-top:40px; }
     .contact-info { display:flex; flex-direction:column; gap:24px; }
     .info-card { background:var(--white); padding:24px; border-radius:20px; text-align:center; box-shadow:var(--shadow-sm); border:1px solid var(--border-light); transition:var(--transition); }
@@ -131,9 +140,11 @@
     input:focus, textarea:focus { outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(0,102,255,0.1); }
     .form-note { font-size:0.75rem; text-align:center; margin-top:16px; color:var(--text-muted); }
 
-    /* footer */
+    /* ===== FOOTER ===== */
     footer { background:var(--slate); color:white; padding:48px 0 24px; }
     .footer-content { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:32px; padding-bottom:32px; border-bottom:1px solid rgba(255,255,255,0.1); }
+    .footer-logo { display:flex; align-items:center; gap:12px; }
+    .footer-logo img { height: 40px; width: auto; border-radius: 6px; object-fit: contain; }
     .footer-logo h2 { font-size:1.5rem; font-weight:800; }
     .footer-logo h2 span { color:var(--blue); }
     .footer-links { display:flex; gap:28px; flex-wrap:wrap; }
@@ -141,20 +152,20 @@
     .footer-links a:hover { color:var(--blue); }
     .footer-bottom { text-align:center; padding-top:24px; font-size:0.85rem; opacity:0.7; }
 
-    /* scroll progress */
+    /* ===== SCROLL PROGRESS & BACK TO TOP ===== */
     .scroll-progress { position:fixed; top:0; left:0; width:0%; height:3px; background:linear-gradient(90deg, var(--blue), var(--blue-light)); z-index:1001; transition:width 0.1s ease; }
     .back-to-top { position:fixed; bottom:30px; right:30px; width:50px; height:50px; background:var(--blue); color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; opacity:0; visibility:hidden; transition:all 0.3s ease; z-index:1000; box-shadow:0 4px 12px rgba(0,0,0,0.15); }
     .back-to-top.visible { opacity:1; visibility:visible; }
     .back-to-top:hover { transform:translateY(-5px); background:var(--blue-dark); }
 
-    /* animations */
+    /* ===== ANIMATIONS ===== */
     @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
     .load-fade-up { animation:fadeUp 0.6s ease forwards; opacity:0; }
     .delay-1 { animation-delay:0.1s; } .delay-2 { animation-delay:0.2s; } .delay-3 { animation-delay:0.3s; } .delay-4 { animation-delay:0.4s; }
     .load-scale-in { animation:scaleIn 0.5s cubic-bezier(0.2,0.9,0.4,1.1) forwards; opacity:0; }
     @keyframes scaleIn { from { opacity:0; transform:scale(0.9); } to { opacity:1; transform:scale(1); } }
 
-    /* mobile */
+    /* ===== RESPONSIVE ===== */
     @media (max-width:768px) {
       .mobile-menu-btn { display:block; }
       .nav-links { display:none; position:absolute; top:80px; left:0; right:0; background:var(--slate); flex-direction:column; padding:24px; gap:20px; text-align:center; box-shadow:var(--shadow-md); }
@@ -165,6 +176,8 @@
       .contact-wrapper { grid-template-columns:1fr; }
       .form-row { grid-template-columns:1fr; }
       .checkbox-grid { grid-template-columns:1fr; }
+      .logo img { height: 40px; }
+      .logo-text h1 { font-size:1.3rem; }
     }
     @media (max-width:480px) {
       .container { padding:0 16px; }
@@ -174,10 +187,16 @@
   </style>
 </head>
 <body>
-  <!-- Scroll progress & back-to-top (created by JS) -->
+   <!-- ===== HEADER WITH LOGO IMAGE ===== -->
   <header>
     <div class="container header-flex">
-      <div class="logo"><h1>BUSINESS <span>EDGE</span></h1><div class="tagline">Empowering Your Digital Success</div></div>
+      <div class="logo">
+        <img src="assets/logo.png" alt="Business Edge Logo">
+        <div class="logo-text">
+          <h1>BUSINESS <span>EDGE</span></h1>
+          <div class="tagline">Empowering Your Digital Success</div>
+        </div>
+      </div>
       <nav>
         <ul class="nav-links">
           <li><a href="#home" class="nav-link">Home</a></li>
@@ -193,6 +212,7 @@
   </header>
 
   <main>
+    <!-- ===== HERO ===== -->
     <section id="home" class="hero">
       <div class="container">
         <div class="hero-content">
@@ -207,6 +227,7 @@
       </div>
     </section>
 
+    <!-- ===== PRICING ===== -->
     <section id="pricing">
       <div class="container">
         <h2 class="section-title">Clear, <span class="blue-accent-text">honest pricing</span></h2>
@@ -328,6 +349,7 @@
       </div>
     </section>
 
+    <!-- ===== HOW IT WORKS ===== -->
     <section id="how-it-works">
       <div class="container">
         <h2 class="section-title">From zero to <span class="blue-accent-text">digital</span>, in 3 steps</h2>
@@ -339,6 +361,7 @@
       </div>
     </section>
 
+    <!-- ===== WHY US ===== -->
     <section id="why-us">
       <div class="container">
         <h2 class="section-title">Why choose <span class="blue-accent-text">Business Edge</span>?</h2>
@@ -351,6 +374,7 @@
       </div>
     </section>
 
+    <!-- ===== FAQ ===== -->
     <section id="faq">
       <div class="container">
         <h2 class="section-title">Frequently asked <span class="blue-accent-text">questions</span></h2>
@@ -365,6 +389,7 @@
       </div>
     </section>
 
+    <!-- ===== CONTACT ===== -->
     <section id="contact">
       <div class="container">
         <h2 class="section-title">Request a <span class="blue-accent-text">tailored quote</span></h2>
@@ -399,7 +424,6 @@
                 <label class="checkbox-item"><input type="checkbox" name="services" value="Chatbot Hosting"><span>Chatbot Hosting</span></label>
                 <label class="checkbox-item"><input type="checkbox" name="services" value="Microsoft Business Package"><span>Microsoft Business Package</span></label>
                 <label class="checkbox-item"><input type="checkbox" name="services" value="VoIP Business Line"><span>VoIP Business Line</span></label>
-        
               </div>
             </div>
             <div class="form-group"><textarea id="message" name="message" placeholder="Tell us about your business, budget, or timeline..." rows="4"></textarea></div>
@@ -412,10 +436,14 @@
     </section>
   </main>
 
+  <!-- ===== FOOTER ===== -->
   <footer>
     <div class="container">
       <div class="footer-content">
-        <div class="footer-logo"><h2>BUSINESS <span>EDGE</span></h2><p>Empowering Your Digital Success</p></div>
+        <div class="footer-logo">
+          <img src="C:\Users\shaun\OneDrive - cvts.co.za\Documents\CVTS\business-edge-website 1\assets\logo.png" alt="Business Edge Logo">
+          <h2>BUSINESS <span>EDGE</span></h2>
+        </div>
         <div class="footer-links"><a href="#home">Home</a><a href="#pricing">Services</a><a href="#how-it-works">Process</a><a href="#why-us">Why Us</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
       </div>
       <div class="footer-bottom"><p>&copy; 2026 Business Edge. All rights reserved. SME IT Infrastructure Specialists.</p></div>
@@ -470,17 +498,15 @@
       const hiddenService = document.getElementById('selectedService');
       quoteBtns.forEach(btn => {
         btn.addEventListener('click', function(e) {
-          e.preventDefault(); // prevent any default
+          e.preventDefault();
           const service = this.getAttribute('data-service') || '';
           if (hiddenService) hiddenService.value = service;
-          // scroll to contact
           const contactSection = document.getElementById('contact');
           if (contactSection) {
             const offset = 80;
             const pos = contactSection.getBoundingClientRect().top + window.pageYOffset - offset;
             window.scrollTo({ top: pos, behavior: 'smooth' });
           }
-          // optional visual feedback
           this.style.transform = 'scale(0.96)';
           setTimeout(() => this.style.transform = '', 200);
         });
@@ -516,7 +542,7 @@
         backBtn.classList.toggle('visible', window.scrollY > 300);
       });
 
-      // ===== FORM SUBMISSION (client side feedback) =====
+      // ===== FORM SUBMISSION =====
       const form = document.getElementById('quoteForm');
       if (form) {
         form.addEventListener('submit', function(e) {
@@ -532,7 +558,6 @@
             showMsg('Please enter a valid email address.', 'error');
             return;
           }
-          // success message (after actual submit, but we show it)
           setTimeout(() => {
             showMsg('Thank you! We\'ve received your request and will respond within 24 hours.', 'success');
             form.reset();
@@ -595,7 +620,7 @@
         });
       });
 
-      console.log('Business Edge ready – quote buttons scroll to contact.');
+      console.log('Business Edge ready – logo image loaded.');
     })();
   </script>
 </body>
